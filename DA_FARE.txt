@@ -1,0 +1,47 @@
+DA FARE!!!
+
+
+IN GENERALE
+Controllare tutti i vari permessi di sovrascrivere e decidere dove si può fare e dove no
+Impostare come variabili nella funzione main() i vari percorsi e i file di input
+scrivere in cima ad ogni script come commento quali variabili si usanoe come cambiarle per adattare lo script ad altre aree o altri dati
+
+PER MAPPE RASTER IN INPUT
+Aggiungere il controllo che se hanno estensione < allìarea di lavoro vengono cancellate
+Aggiungere a tutte il controllo che se hanno risoluzione < di quella stabilita vengono cancellate e se hanno risoluzione > vengono ricampionate
+mettere un r.vif sulle mappe di base una volta inserite tutti per evitare le collinearità piiù evidenti?
+
+
+MAIN
+Definire le variabili nella funzione main() con un certo senso, in modo da riuscire ad utilizzarle quando si mettono insieme tutte le funzioni
+
+FRANE (ottimizzato per i file che provengono dall'IFFI)
+Sistemare la procedura per l'importazione delle mappe di frana anche per il file aree_poly_opendataPolygon che contiene le are soggette a frane superficiali diffuse
+Fare in  modo di importare tra i tipi di frane solo quelli che servono invece che come si fa ora importarli tutti
+Provare a dividere le aree in frana in parti > quota media e parti < quota media (Andrea Giacobbe)
+
+
+DATI DA DTM
+Mettere la risoluzione come variabile da scegliere -> usare per il controllo della risoluzione lo stesso criterio utilizzato per l'estensione dei dataset delle frane
+Impostare la classificazione della pendenza tipo quella della quota, in modo da potere scegliere le classi di pendenza
+Uguale per esposizione e accumulazione
+Sarebbe bello trovare una procedura meno barocca, ma almeno questa funziona
+
+LITOLOGIA
+La mappa litology_italy.gpkg è costituita da poligoni raggruppati. Per questo grass, anche impostando l'opzione di importare solo le features entro la regione di lavoro, importa tutta l'Italia, mettendoci una vita. Ci sono inoltre alcui errori topologici. Segnalarlo a Ivan Marchesini
+Lo script è stato impostato per utilizzare la mappa litology_italy_single_parts.gpkg elaborata separando le diverse parti in QGIS e in questo modo funziona
+La mappa della litologia non corrisponde perfettamente con la regione, quindi la litologia ha un certo numero di celle di meno lungo la costa
+Bisognerebbe impacchettare la mappa modificata insieme allo script
+Stabilire come ridurre le classi che escono dalla statistica bivariata ad un numero accettabile (quando le celle infrana sono =0 classe=1, poi?)
+
+
+RIORDINARE LE CLASSI
+Fare in modo che per ogni mapset le mappe riclassificate abbiano come numero il numero del tipo di frana. Adesso sono tutte uguali con il numero _2 e eni report potrebbe fare confusione
+
+LOGIT
+Il comando riporta NameError: name 'log' is not defined ma crea ugualmente delle mappe corrette. Per ora resta così ma fa brutto
+
+VARIE ED EVENTUALI
+Calcolo della Frequency Ratio
+Considerare la possibilità di situazioni "escludenti" ad esempio le aree pianeggianti o quelle con erosione = 0 coordinandosi con Kaveh
+
