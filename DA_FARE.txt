@@ -47,4 +47,4 @@ LOGIT
 Il comando riporta NameError: name 'log' is not defined ma crea ugualmente delle mappe corrette. Per ora resta così ma fa brutto
 
 VARIE ED EVENTUALI
-Considerare la possibilità di situazioni "escludenti" ad esempio le aree pianeggianti o quelle con erosione = 0 coordinandosi con Kaveh
+Considerare la possibilità di situazioni "escludenti" ad esempio le aree pianeggianti
