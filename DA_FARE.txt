@@ -9,15 +9,20 @@ scrivere in cima ad ogni script come commento quali variabili si usanoe come cam
 PER MAPPE RASTER IN INPUT
 Aggiungere il controllo che se hanno estensione < allìarea di lavoro vengono cancellate
 Aggiungere a tutte il controllo che se hanno risoluzione < di quella stabilita vengono cancellate e se hanno risoluzione > vengono ricampionate
+una volta che sono state aggiunte tutte le mappe impostare come MASK la mappa più piccola
 mettere un r.vif sulle mappe di base una volta inserite tutti per evitare le collinearità piiù evidenti?
 
 
 MAIN
 Definire le variabili nella funzione main() con un certo senso, in modo da riuscire ad utilizzarle quando si mettono insieme tutte le funzioni
 
+RETE STRADALE E FERROVIARIA
+Visto che spesso i file regionali o dal PCN sono incompleti avrebbe senso scaricare direttamente i dataset da OpenStreetMap?
+
 FRANE (ottimizzato per i file che provengono dall'IFFI)
 Sistemare la procedura per l'importazione delle mappe di frana anche per il file aree_poly_opendataPolygon che contiene le are soggette a frane superficiali diffuse
 Fare in  modo di importare tra i tipi di frane solo quelli che servono invece che come si fa ora importarli tutti
+Divisione random in 80 e 20
 Provare a dividere le aree in frana in parti > quota media e parti < quota media (Andrea Giacobbe)
 
 
@@ -36,12 +41,10 @@ Stabilire come ridurre le classi che escono dalla statistica bivariata ad un num
 
 
 RIORDINARE LE CLASSI
-Fare in modo che per ogni mapset le mappe riclassificate abbiano come numero il numero del tipo di frana. Adesso sono tutte uguali con il numero _2 e eni report potrebbe fare confusione
+Fare in modo che per ogni mapset le mappe riclassificate abbiano come numero il numero del tipo di frana. Adesso sono tutte uguali con il numero _2 e e nel report potrebbe fare confusione
 
 LOGIT
 Il comando riporta NameError: name 'log' is not defined ma crea ugualmente delle mappe corrette. Per ora resta così ma fa brutto
 
 VARIE ED EVENTUALI
-Calcolo della Frequency Ratio
 Considerare la possibilità di situazioni "escludenti" ad esempio le aree pianeggianti o quelle con erosione = 0 coordinandosi con Kaveh
-
